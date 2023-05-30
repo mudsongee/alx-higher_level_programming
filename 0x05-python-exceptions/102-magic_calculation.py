@@ -15,6 +15,3 @@ def magic_calculation(a, b):
             break
 
     return (result)
-bytecode = dis.Bytecode(magic_calculation)
-for instruction in bytecode:
-    print(instruction)
