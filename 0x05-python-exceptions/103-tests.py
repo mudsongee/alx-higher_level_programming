@@ -156,4 +156,3 @@ Element 7: float
   [ERROR] Invalid Float Object
 [*] Python list info
   [ERROR] Invalid List Object
-
