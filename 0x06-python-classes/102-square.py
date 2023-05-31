@@ -1,61 +1,70 @@
 #!/usr/bin/python3
+
+"""Define a class Square."""
+
+
 class Square:
-    """
-    creates square object
-    """
-    def __init__(self, size=0):
-        self.__size = size
-    """
-    initializes a square object with size
-    Args:
-        __size(int): size of square private property
-    """
+    """Represent a square."""
+
+    def __init__(self, size=0, position=(0, 0)):
+        """Initialize a new square.
+        Args:
+            size (int): The size of the new square.
+            position (int, int): The position of the new square.
+        """
+        self.size = size
+        self.position = position
+
     @property
     def size(self):
-        return self.__size
-    """
-    gets size of square
-    """
+        """Get/set the current size of the square."""
+        return (self.__size)
+
     @size.setter
     def size(self, value):
-        if(type(value) is not int):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if(value < 0):
+        elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-        """
-        sets size of square
-        square must be integer and greater than 0
-        """
+
+    @property
+    def position(self):
+        """Get/set the current position of the square."""
+        return (self.__position)
+
+    @position.setter
+    def position(self, value):
+        if (not isinstance(value, tuple) or
+                len(value) != 2 or
+                not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
+
     def area(self):
-        return(self.__size**2)
-        """
-        return area of square based on size
-        """
-    def __lt__(self, other):
-        return self.area() < other.area()
-        """
-        less than
-        """
-    def __eq__(self, other):
-        return self.area() == other.area()
-        """
-        equal to
-        """
-    def __le__(self, other):
-        return self.area() <= other.area()
-        """
-        less than equal to
-        """
-    def __gt__(self, other):
-        return self.area() > other.area()
-        """
-        greater than
-        """
-    def __ge__(self, other):
-        return self.area() >= other.area()
-        """
-        greater equal
-        """
-    def __ne__(self, other):
-        return self.area() != other.area()
+        """Return the current area of the square."""
+        return (self.__size * self.__size)
+
+    def my_print(self):
+        """Print the square with the # character."""
+        if self.__size == 0:
+            print("")
+            return
+
+        [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            print("")
+
+    def __str__(self):
+        """Define the print() representation of a Square."""
+        if self.__size != 0:
+            [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            if i != self.__size - 1:
+                print("")
+        return ("")
