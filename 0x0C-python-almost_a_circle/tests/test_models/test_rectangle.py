@@ -878,6 +878,6 @@ class TestRectangle_to_dictionary(unittest.TestCase):
         sys.stdout = sys.__stdout__
         assert output.getvalue() == "[Rectangle] (89) 4/5 - 2/3\n"
 
+
 if __name__ == "__main__":
     unittest.main()
-
