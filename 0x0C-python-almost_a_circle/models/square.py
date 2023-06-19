@@ -72,3 +72,4 @@ class Square(Rectangle):
         """Dictionary with values for rectangle"""
         return {"id": self.id, "size": self.size,
                 "x": self.x, "y": self.y}
+

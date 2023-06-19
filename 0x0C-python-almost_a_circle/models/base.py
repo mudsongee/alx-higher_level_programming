@@ -73,3 +73,4 @@ class Base(object):
                 dictionary = cls.from_json_string(f.read())
             return[cls.create(**obj) for obj in dictionary]
         return []
+
