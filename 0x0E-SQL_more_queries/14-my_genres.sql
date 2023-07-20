@@ -5,5 +5,5 @@ ON tgs.genre_id = tgg.id
 JOIN tv_shows AS ts
 ON ts.id = tgs.show_id
 WHERE ts.title='Dexter'
-GROUP BY tgg.name ASC;
+ORDER BY tgg.name ASC;
 

@@ -4,5 +4,5 @@ JOIN tv_genres tg
 ON tg.id = tgs.genre_id
 JOIN tv_show_ratings tr
 ON tr.show_id = tgs.show_id
-GROUP BY  tg.name DESC ORDER BY RATING DESC;
+GROUP BY  tg.name ORDER BY RATING DESC;
 
