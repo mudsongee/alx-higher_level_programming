@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const argumentsList = process.argv.slice(2);
-const numbers = arguentsList.map(arg => parseInt(arg))'
+const numbers = arguentsList.map(arg => parseInt(arg));
 
 if (numbers.length < 2) {
 	console.log(0);
