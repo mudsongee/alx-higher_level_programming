@@ -7,8 +7,13 @@ class Rectangle {
       this.height = h;
     }
   }
+<<<<<<< HEAD
 
   print () {
+=======
+  
+	print () {
+>>>>>>> 6602de82bb5dccb446b0134e8d0c73023cf1c76d
     for (let i = 0; i < this.height; i++) {
       console.log('X'.repeat(this.width));
     }
