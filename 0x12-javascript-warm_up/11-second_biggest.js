@@ -5,4 +5,3 @@ if (nums.length <= 1) {
 } else {
   console.log(nums.sort().reverse()[1]);
 }
-

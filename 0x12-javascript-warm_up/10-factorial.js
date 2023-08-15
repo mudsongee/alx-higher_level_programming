@@ -6,4 +6,3 @@ function fact (a) {
 }
 
 console.log(fact(num1));
-

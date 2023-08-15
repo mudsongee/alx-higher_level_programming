@@ -6,4 +6,3 @@ function add (a, b) {
 }
 
 console.log(add(Number(num1), Number(num2)));
-
