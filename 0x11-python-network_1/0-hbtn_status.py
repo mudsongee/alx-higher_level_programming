@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-# fetch https://intranet.hbtn.io/status; display response
+"""
+fetch https://intranet.hbtn.io/status; display response
+"""
 
 import urllib.request
 
@@ -12,3 +14,4 @@ if __name__ == "__main__":
         print("\t- type: {}".format(type(content)))
         print("\t- content: {}".format(content))
         print("\t- utf8 content: {}".format(url))
+
