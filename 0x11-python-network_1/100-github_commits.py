@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-A script that fetches the 10 most recent commits of the repository `rails` by the user `rails`
-using the GitHub API and prints them in the format `<sha>: <author name>` (one by line).
+A script that fetches the 10 most recent commits of the repository
 """
 
 import requests
