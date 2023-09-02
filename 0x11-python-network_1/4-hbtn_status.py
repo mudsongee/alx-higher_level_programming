@@ -1,13 +1,14 @@
 #!/usr/bin/python3
 """
-requests use
+A script that fetches https://alx-intranet.hbtn.io/status.
+- uses requests package
 """
 
 import requests
 
-
-if __name__ == "__main__":
-    r = requests.get('https://intranet.hbtn.io/status')
+if __name__ == '__main__':
+    res = requests.get('https://alx-intranet.hbtn.io/status')
+    content = res.text
     print("Body response:")
-    print("\t- type: {}".format(type(r.text)))
-    print("\t- content: {}".format(r.text))
+    print(f"\t- type: {type(content)}")
+    print(f"\t- content: {content}")
