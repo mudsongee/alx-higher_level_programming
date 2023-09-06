@@ -6,7 +6,7 @@ def find_peak2(numbers, size, start, end):
     middle = int(start + (end - start) / 2)
 
     if ((middle is 0 or numbers[middle - 1] <= numbers[middle]) and
-       (middle == size - 1 or numbers[middle + 1] <= numbers[middle])):
+       (middle = size - 1 or numbers[middle + 1] <= numbers[middle])):
         return numbers[middle]
     elif (middle > 0 and numbers[middle - 1] > numbers[middle]):
         return find_peak2(numbers, size, start, (middle - 1))
