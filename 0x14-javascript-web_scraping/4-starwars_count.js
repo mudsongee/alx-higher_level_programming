@@ -14,7 +14,6 @@ request.get(apiUrl, (error, response, body) => {
       const filmsWithWedgeAntilles = filmsData.filter((film) =>
         film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)
       );
-
       console.log(filmsWithWedgeAntilles.length);
     }
   }
