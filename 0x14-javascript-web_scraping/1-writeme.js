@@ -1,12 +1,15 @@
 #!/usr/bin/node
 // reads and prints the content of a file.
 
-let file = process.argv[2];
-let string = process.argv[3];
-let fs = require('fs');
+const fs = require('fs');
+const file = process.argv[2];
+const string = process.argv[3];
+const fs = require('fs');
 
-fs.writeFile(file, string, function (err) {
+fs.writeFile(filePath, stringToWrite, 'utf-8', (err) => {
   if (err) {
-    console.log(err);
+    console.error(err);
+  } else {
+    console.log('File has been written successfully.');
   }
 });
