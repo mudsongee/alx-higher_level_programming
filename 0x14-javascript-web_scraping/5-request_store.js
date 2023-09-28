@@ -1,6 +1,9 @@
 #!/usr/bin/node
+// gets the contents of a webpage and stores it in a file
+
 let request = require('request');
 let address = process.argv[2];
+
 request(address, function (error, response, body) {
   if (error) {
     console.log(error);
