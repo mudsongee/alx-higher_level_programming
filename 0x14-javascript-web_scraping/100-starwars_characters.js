@@ -1,4 +1,6 @@
 #!/usr/bin/node
+// prints all characters of a Star Wars movie
+
 const request = require('request');
 const address = 'https://swapi.co/api/films/' + process.argv[2];
 
