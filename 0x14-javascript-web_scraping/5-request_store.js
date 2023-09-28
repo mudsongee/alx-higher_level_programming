@@ -1,16 +1,16 @@
 #!/usr/bin/node
 // gets the contents of a webpage and stores it in a file
 
-let request = require('request');
-let address = process.argv[2];
+const request = require('request');
+const address = process.argv[2];
 
 request(address, function (error, response, body) {
   if (error) {
-    console.log(error);
+    console.error(error);
   } else {
-    let fs = require('fs');
+    const fs = require('fs');
     fs.writeFile(process.argv[3], body, function (err) {
-      if (err) { console.log(err); }
+      if (err) { console.error(err); }
     });
   }
 });
