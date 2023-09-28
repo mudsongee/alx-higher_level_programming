@@ -1,4 +1,6 @@
 #!/usr/bin/node
+// reads and prints the content of a file
+
 const fs = require('fs');
 
 if (process.argv.length !== 3) {
@@ -15,4 +17,3 @@ fs.readFile(filePath, 'utf-8', (err, data) => {
     console.log(data);
   }
 });
-
