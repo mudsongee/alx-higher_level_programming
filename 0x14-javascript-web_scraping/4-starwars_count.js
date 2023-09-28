@@ -16,8 +16,6 @@ request.get(apiUrl, (error, response, body) => {
       );
 
       console.log(filmsWithWedgeAntilles.length);
-    } else {
-      console.log('Failed to fetch movie data from the API.');
     }
   }
 });
