@@ -1,3 +1,6 @@
+#!/usr/bin/node
+// Print content of a file
+
 const fs = require('fs');
 
 // Check if the correct number of command-line arguments is provided
