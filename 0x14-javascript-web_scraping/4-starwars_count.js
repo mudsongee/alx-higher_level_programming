@@ -1,20 +1,21 @@
 #!/usr/bin/node
-// prints the number of movies where the character “Wedge Antilles” is present
+// prints the number of movies where the character "Wedge Antilles" is present
 
-const request = require('request');
 const apiUrl = process.argv[2];
-const characterId = 18; // Character ID for Wedge Antilles
+const charToSearch = 18;
+const request = require('request');
 
-request.get(apiUrl, (error, response, body) => {
-  if (error) {
-    console.error(error);
+request.get(apiUrl, (err, response, body) => {
+  if (err === null) {
+    const data = JSON.parse(body);
+    let films = data.results;
+    films = films.filter(
+      film => film.characters.find(
+        character => character.match(charToSearch)
+      )
+    );
+    console.log(films.length);
   } else {
-    if (response.statusCode === 200) {
-      const filmsData = JSON.parse(body).results;
-      const filmsWithWedgeAntilles = filmsData.filter((film) =>
-        film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)
-      );
-      console.log(filmsWithWedgeAntilles.length);
-    }
+    console.log(err);
   }
 });
