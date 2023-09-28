@@ -16,3 +16,24 @@ request(address, function (error, response, body) {
     console.log(count);
   }
 });
+
+const request = require('request');
+const apiUrl = process.argv[2];
+const characterId = 18; // Character ID for Wedge Antilles
+
+request.get(apiUrl, (error, response, body) => {
+  if (error) {
+    console.error(error);
+  } else {
+    if (response.statusCode === 200) {
+      const filmsData = JSON.parse(body).results;
+      const filmsWithWedgeAntilles = filmsData.filter((film) =>
+        film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)
+      );
+
+      console.log(filmsWithWedgeAntilles.length);
+    } else {
+      console.log('Failed to fetch movie data from the API.');
+    }
+  }
+});
