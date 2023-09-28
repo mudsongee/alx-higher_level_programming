@@ -1,10 +1,12 @@
 #!/usr/bin/node
+// computes the number of tasks completed by user id.
+
 const request = require('request');
 const address = process.argv[2];
 
 request(address, function (error, response, body) {
   if (error) {
-    console.log(error);
+    console.error(error);
   } else {
     let results = {};
     for (let td of JSON.parse(body)) {
