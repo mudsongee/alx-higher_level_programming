@@ -1,8 +1,13 @@
-document.addEventListener('DOMContentLoaded', function () {
-  function translateHello() {
+#!/usr/bin/node
+const $ = window.$;
+
+$(document).ready(function () {
+  // Function to fetch and display the translation
+  function translateHello () {
     const languageCode = $('#language_code').val();
 
-    $.ajax({
+    $.getJSON({
+      //url: 'https://hellosalut.stefanbohacek.dev/',
       url: 'https://www.fourtonfish.com/hellosalut/hello/',
       type: 'GET',
       data: { lang: languageCode },
@@ -11,14 +16,16 @@ document.addEventListener('DOMContentLoaded', function () {
       },
       error: function (error) {
         $('#hello').text('Error: Language code not found');
-      },
+      }
     });
   }
 
-  $('#btn_translate').click(translateHello);
+  // Trigger translation when the "Translate" button is clicked
+  $('#btn_translate').on('click', translateHello);
 
-  $('#language_code').keypress(function (event) {
-    if (event.which == 13) {
+  // Trigger translation when "Enter" key is pressed in the input field
+  $('#language_code').on('keypress', function (event) {
+    if (event.which === 13) {
       translateHello();
     }
   });

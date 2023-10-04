@@ -1,6 +1,12 @@
-$('document').ready(function () {
-  $.getJSON('https://swapi.co/api/people/5/?format=json', function (value) {
-    $('DIV#character').text(value.name);
+$(document).ready(function () {
+  $.ajax({
+    url: 'https://swapi-api.alx-tools.com/api/people/5/?format=json',
+    method: 'GET',
+    success: function (data) {
+      $('DIV#character').text(data.name);
+    },
+    error: function () {
+      $('DIV#character').text('Error fetching character data');
+    }
   });
 });
-
